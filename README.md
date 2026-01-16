@@ -1,4 +1,4 @@
-# 🚀 Modern AI Full-Stack Template
+# 🚀 Production AI Full-Stack Template
 
 
 <p>
