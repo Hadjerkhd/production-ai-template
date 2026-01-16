@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+
 from app.config import settings
 from app.routes import llm
 

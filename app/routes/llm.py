@@ -1,8 +1,10 @@
 from fastapi import APIRouter, HTTPException
+
 from app.schemas.llm import QueryRequest, QueryResponse
 from app.services.llm_service import llm_service
 
 router = APIRouter()
+
 
 @router.post("/generate", response_model=QueryResponse)
 async def generate_response(request: QueryRequest) -> QueryResponse:
