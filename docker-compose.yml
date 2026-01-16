@@ -24,6 +24,6 @@ services:
       - API_URL=http://backend:8000
     volumes:
       - ./ui:/app/ui
-    command: streamlit run ui/app.py
+    command: streamlit run ui/main.py
     depends_on:
       - backend
