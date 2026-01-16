@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/uv-Astral-purple?style=for-the-badge" alt="uv">
 </p>
 
-[![CI/CD Pipeline](https://github.com/yourusername/production-ai-template/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/yourusername/production-ai-template/actions/workflows/ci-cd.yml)
+[![CI/CD Pipeline](https://github.com/Hadjerkhd/production-ai-template/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Hadjerkhd/production-ai-template/actions/workflows/ci-cd.yml)
 
 This is a production-ready template for building full-stack AI applications using modern Python tooling.
 
