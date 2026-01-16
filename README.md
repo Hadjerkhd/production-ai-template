@@ -10,6 +10,8 @@
   <img src="https://img.shields.io/badge/uv-Astral-purple?style=for-the-badge" alt="uv">
 </p>
 
+[![CI/CD Pipeline](https://github.com/yourusername/production-ai-template/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/yourusername/production-ai-template/actions/workflows/ci-cd.yml)
+
 This is a production-ready template for building full-stack AI applications using modern Python tooling.
 
 ## Tech Stack
@@ -96,3 +98,11 @@ You can run the entire stack (Backend + Frontend) using Docker.
   ```bash
   uv run mypy .
   ```
+
+## CI/CD Pipeline
+
+This project includes a GitHub Actions workflow that automatically:
+1.  **Checks Quality**: Runs `ruff` formatting/linting and `mypy` type checking.
+2.  **Builds & Publishes**: Builds the Docker image and pushes it to **GitHub Container Registry (GHCR)**.
+
+The workflow runs on every push to the `main` branch. No manual secret configuration is needed as it uses the default `GITHUB_TOKEN`.
