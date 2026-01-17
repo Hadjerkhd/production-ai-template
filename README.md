@@ -106,6 +106,16 @@ You can run the entire stack (Backend + Frontend) using Docker.
   make test
   ```
 
+- **Pre-commit Hooks**:
+  This project uses `pre-commit` to ensure code quality. To install the hooks locally:
+  ```bash
+  uv run pre-commit install
+  ```
+  Once installed, the hooks (Ruff, formatting, etc.) will run automatically on every `git commit`. You can also run them manually:
+  ```bash
+  uv run pre-commit run --all-files
+  ```
+
 ## CI/CD Pipeline
 
 This project includes a GitHub Actions workflow that automatically:
