@@ -45,6 +45,7 @@ This is a production-ready template for building full-stack AI applications usin
 ## Prerequisites
 
 - [uv](https://github.com/astral-sh/uv)
+- [pre-commit](https://pre-commit.com/)
 - [Docker](https://www.docker.com/) (optional, for containerized run)
 - Python 3.9+
 
