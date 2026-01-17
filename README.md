@@ -27,13 +27,12 @@ This is a production-ready template for building full-stack AI applications usin
 
 ```
 ├── app/
-│   ├── api/
-│   │   └── routes/         # API route handlers
-│   ├── core/
-│   │   └── config.py       # Configuration and environment variables
-│   ├── schemas/            # Pydantic models for request/response
-│   ├── services/           # Business logic and specialized services (LLM, etc.)
-│   └── main.py             # Application entry point
+│   ├── routes/         # API route handlers
+│   ├── config.py       # Configuration and environment variables
+│   ├── schemas/        # Pydantic models for request/response
+│   ├── services/       # Business logic and specialized services (LLM, etc.)
+│   └── main.py         # Application entry point
+├── tests/              # Unit and integration tests
 ├── ui/
 │   └── app.py              # Streamlit frontend application
 ├── .env.example            # Example environment variables
@@ -97,6 +96,14 @@ You can run the entire stack (Backend + Frontend) using Docker.
 - **Type Checking**:
   ```bash
   uv run mypy .
+  ```
+- **Testing**:
+  ```bash
+  uv run pytest
+  ```
+  or using the makefile:
+  ```bash
+  make test
   ```
 
 ## CI/CD Pipeline

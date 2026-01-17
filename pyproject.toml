@@ -27,6 +27,8 @@ dev-dependencies = [
     "mypy>=1.9.0",
     "pre-commit>=3.6.0",
     "types-requests>=2.31.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
 ]
 
 [tool.ruff]
@@ -44,4 +46,9 @@ ignore_missing_imports = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["app"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = "test_*.py"
 
