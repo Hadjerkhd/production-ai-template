@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/uv-Astral-purple?style=for-the-badge" alt="uv">
+  <img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLflow">
 </p>
 
 [![CI/CD Pipeline](https://github.com/Hadjerkhd/production-ai-template/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Hadjerkhd/production-ai-template/actions/workflows/ci-cd.yml)
