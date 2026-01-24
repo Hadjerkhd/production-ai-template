@@ -1,9 +1,19 @@
+import mlflow
 from fastapi import FastAPI
 
 from app.config import settings
 from app.routes import llm
 
+# Configure MLflow
+mlflow.set_tracking_uri(settings.MLFLOW_TRACKING_URI)
+experiment = mlflow.set_experiment(settings.MLFLOW_EXPERIMENT_NAME)
+experiment_id = experiment.experiment_id
+
+# Enable LangChain autologging for LLM traces
+mlflow.langchain.autolog()
+
 app = FastAPI(title=settings.PROJECT_NAME)
+
 
 app.include_router(llm.router, prefix="/api/v1", tags=["llm"])
 
