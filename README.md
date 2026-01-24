@@ -22,6 +22,7 @@ This is a production-ready template for building full-stack AI applications usin
 - **UV**: Extremely fast Python package installer and resolver.
 - **Docker**: Containerization for consistent deployment.
 - **Ruff & Mypy**: Advanced linting and type checking.
+- **MLflow**: Open-source platform for managing the end-to-end machine learning lifecycle, used here for LLM tracing and observability.
 
 ## Project Structure
 
@@ -55,7 +56,12 @@ This is a production-ready template for building full-stack AI applications usin
    ```bash
    cp .env.example .env
    ```
-2. Edit `.env` and add your API keys (e.g., `OPENAI_API_KEY`) if you plan to use real LLM providers.
+2. Edit `.env` and add your API keys (e.g., `OPENAI_API_KEY`) and MLflow settings:
+   ```env
+   OPENAI_API_KEY="your-key"
+   MLFLOW_TRACKING_URI="http://localhost:5000"
+   MLFLOW_EXPERIMENT_NAME="llm-traces"
+   ```
 
 ## Quick Start (Local)
 
@@ -125,7 +131,29 @@ This project includes a GitHub Actions workflow that automatically:
 
 The workflow runs on every push to the `main` branch. No manual secret configuration is needed as it uses the default `GITHUB_TOKEN`.
 
+## Observability & LLM Tracing
+
+This template includes built-in support for LLM tracing using **MLflow**.
+
+### 1. Start the MLflow Server
+
+In a separate terminal, start the MLflow tracking server:
+```bash
+make start-mlflow
+```
+The server will be available at [http://localhost:5000](http://localhost:5000).
+
+### 2. Automatic Tracing
+
+The application uses `mlflow.langchain.autolog()` to automatically capture traces of all LangChain calls. This includes:
+- Prompts and completions
+- Chain execution metadata
+- Token usage (if available from provider)
+- Latency and errors
+
+Traces are automatically associated with the experiment name defined in `MLFLOW_EXPERIMENT_NAME`.
+
 ## Todo
-- observability
-- FastMCP
-- automatic eval in cicd
+- [x] observability
+- [ ] FastMCP
+- [ ] automatic eval in cicd
