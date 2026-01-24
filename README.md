@@ -124,3 +124,8 @@ This project includes a GitHub Actions workflow that automatically:
 2.  **Builds & Publishes**: Builds the Docker image and pushes it to **GitHub Container Registry (GHCR)**.
 
 The workflow runs on every push to the `main` branch. No manual secret configuration is needed as it uses the default `GITHUB_TOKEN`.
+
+## Todo
+- observability
+- FastMCP
+- automatic eval in cicd
