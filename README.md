@@ -157,4 +157,6 @@ Traces are automatically associated with the experiment name defined in `MLFLOW_
 ## Todo
 - [x] observability
 - [ ] FastMCP
-- [ ] automatic eval in cicd
+- [ ] automatic eval in ci/cd
+- [ ] code security/vulnerability analysis in ci/cd
+- [ ] lock commits on main branch
