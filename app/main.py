@@ -5,12 +5,13 @@ from app.config import settings
 from app.routes import llm
 
 # Configure MLflow
-mlflow.set_tracking_uri(settings.MLFLOW_TRACKING_URI)
-experiment = mlflow.set_experiment(settings.MLFLOW_EXPERIMENT_NAME)
-experiment_id = experiment.experiment_id
+if settings.ENABLE_MLFLOW:
+    mlflow.set_tracking_uri(settings.MLFLOW_TRACKING_URI)
+    experiment = mlflow.set_experiment(settings.MLFLOW_EXPERIMENT_NAME)
+    experiment_id = experiment.experiment_id
 
-# Enable LangChain autologging for LLM traces
-mlflow.langchain.autolog()
+    # Enable LangChain autologging for LLM traces
+    mlflow.langchain.autolog()
 
 app = FastAPI(title=settings.PROJECT_NAME)
 

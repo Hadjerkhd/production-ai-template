@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: str = "OPENAI_API_KEY"
 
     # MLflow Settings
+    ENABLE_MLFLOW: bool = False
     MLFLOW_TRACKING_URI: str = "http://localhost:5000"
     MLFLOW_EXPERIMENT_NAME: str = "llm-traces"
 
