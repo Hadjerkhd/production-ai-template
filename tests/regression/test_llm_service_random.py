@@ -1,6 +1,7 @@
 # tests/regression/test_llm_service_random.py
 
 import random
+
 import pytest
 
 from app.services.llm_service import LLMService

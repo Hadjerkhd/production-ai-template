@@ -62,16 +62,11 @@ jobs:
         with:
           python-version-file: pyproject.toml
 
-      - name: Install dependencies
-        run: uv sync --all-extras --dev
-
-      - name: Export dependencies
-        run: uv export --no-hashes -o requirements.txt
-
       - name: Run pip-audit
         run: |
           pip install pip-audit
-          pip-audit -r requirements.txt
+          uv sync --all-extras --dev
+          uv run pip-audit
   # ==========================================================
   # UNIT TESTS 
   # DMake sure all unit tests passes
