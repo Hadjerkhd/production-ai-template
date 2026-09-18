@@ -2,7 +2,7 @@ import mlflow
 from fastapi import FastAPI
 
 from app.config import settings
-from app.routes import llm
+from app.routes import health, llm
 
 # Configure MLflow
 if settings.ENABLE_MLFLOW:
@@ -17,6 +17,7 @@ app = FastAPI(title=settings.PROJECT_NAME)
 
 
 app.include_router(llm.router, prefix="/api/v1", tags=["llm"])
+app.include_router(health.router, prefix="/api/v1", tags=["health"])
 
 
 @app.get("/")
