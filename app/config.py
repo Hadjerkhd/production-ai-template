@@ -7,7 +7,7 @@ class Settings(BaseSettings):
 
     GCP_PROJECT_ID: str | None = None
     VERTEX_AI_LOCATION: str = "us-central1"
-    VERTEX_AI_MODEL: str = "gemini-2.0-flash-001"
+    VERTEX_AI_MODEL: str = "gemini-3.5-flash"
 
     # MLflow Settings
     ENABLE_MLFLOW: bool = False
