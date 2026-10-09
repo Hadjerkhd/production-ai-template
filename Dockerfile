@@ -45,4 +45,4 @@ HEALTHCHECK --interval=30s \
     CMD curl -f http://localhost:8000/api/v1/health || exit 1
 
 # Run the application by default
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
