@@ -312,7 +312,23 @@ Copy each variable's printed value into GitHub. Do not include the `$` sign.
 ### 6. Deploy and verify
 
 Push a commit to `main`, or run **Deploy Backend to GCP** from the GitHub **Actions** tab. When the job succeeds, grant your Google account `roles/run.invoker` if you have not already, then test Swagger through the authenticated proxy at `http://localhost:8080/docs`.
-
+```
+gcloud auth login
+gcloud config set project VOTRE_PROJECT_ID
+$CALLER = gcloud config get-value account
+gcloud run services add-iam-policy-binding production-ai-api-public `
+  --project $PROJECT_ID `
+  --region $REGION `
+  --member "user:$CALLER" `
+  --role "roles/run.invoker"
+```
+Start service 
+```
+gcloud run services proxy production-ai-api-public `
+  --project $PROJECT_ID `
+  --region $REGION `
+  --port 8080
+  ```
 ## What the Workflow Sets on Cloud Run
 
 The deployment command sets these application environment variables:

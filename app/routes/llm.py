@@ -1,9 +1,12 @@
+import logging
+
 from fastapi import APIRouter, HTTPException
 
 from app.schemas.llm import QueryRequest, QueryResponse
 from app.services.llm_service import llm_service
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 
 
 @router.post("/generate", response_model=QueryResponse)
@@ -12,6 +15,7 @@ async def generate_response(request: QueryRequest) -> QueryResponse:
         answer = await llm_service.generate_response(request.query)
         return QueryResponse(answer=answer)
     except Exception as e:
+        logger.exception("LLM response generation failed")
         raise HTTPException(
             status_code=500, detail="Unable to generate response"
         ) from e
