@@ -12,4 +12,6 @@ async def generate_response(request: QueryRequest) -> QueryResponse:
         answer = await llm_service.generate_response(request.query)
         return QueryResponse(answer=answer)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(
+            status_code=500, detail="Unable to generate response"
+        ) from e

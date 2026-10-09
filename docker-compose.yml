@@ -11,19 +11,20 @@ services:
       - ./app:/app/app
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
       interval: 30s
       timeout: 10s
       retries: 3
 
-  frontend:
+  ui:
     build: .
+    working_dir: /app
     ports:
       - "8501:8501"
     environment:
       - API_URL=http://backend:8000
     volumes:
       - ./ui:/app/ui
-    command: streamlit run ui/main.py
+    command: streamlit run ui/main.py --server.address 0.0.0.0 --server.port 8501
     depends_on:
       - backend

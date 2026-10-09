@@ -5,8 +5,9 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = "Production AI Template"
     API_V1_STR: str = "/api/v1"
 
-    # Example validation for keys
-    OPENAI_API_KEY: str = "OPENAI_API_KEY"
+    GCP_PROJECT_ID: str | None = None
+    VERTEX_AI_LOCATION: str = "us-central1"
+    VERTEX_AI_MODEL: str = "gemini-2.0-flash-001"
 
     # MLflow Settings
     ENABLE_MLFLOW: bool = False

@@ -1,4 +1,4 @@
-FROM python:3.9-slim-bookworm
+FROM python:3.12-slim-bookworm
 # Create application user
 RUN groupadd -r appuser && \
     useradd -r -g appuser -m appuser
@@ -42,7 +42,7 @@ HEALTHCHECK --interval=30s \
             --timeout=5s \
             --start-period=15s \
             --retries=3 \
-    CMD curl -f http://localhost:8000/health || exit 1
+    CMD curl -f http://localhost:8000/api/v1/health || exit 1
 
 # Run the application by default
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
