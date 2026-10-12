@@ -6,8 +6,8 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
 
     GCP_PROJECT_ID: str | None = None
-    VERTEX_AI_LOCATION: str = "us-central1"
-    VERTEX_AI_MODEL: str = "gemini-3.5-flash"
+    VERTEX_AI_LOCATION: str = "europe-west1"
+    VERTEX_AI_MODEL: str = "gemini-3.5-flash-lite"
     LOG_LEVEL: str = "INFO"
     MAX_PROMPT_CHARACTERS: int = 12000
     MAX_OUTPUT_TOKENS: int = 512
