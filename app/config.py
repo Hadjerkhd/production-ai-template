@@ -7,7 +7,7 @@ class Settings(BaseSettings):
 
     GCP_PROJECT_ID: str | None = None
     VERTEX_AI_LOCATION: str = "europe-west1"
-    VERTEX_AI_MODEL: str = "gemini-3.5-flash-lite"
+    VERTEX_AI_MODEL: str = "gemini-2.5-flash-lite"
     LOG_LEVEL: str = "INFO"
     MAX_PROMPT_CHARACTERS: int = 12000
     MAX_OUTPUT_TOKENS: int = 512
