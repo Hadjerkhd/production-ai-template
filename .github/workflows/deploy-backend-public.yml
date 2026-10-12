@@ -57,6 +57,9 @@ jobs:
             --region "${REGION}" \
             --project "${PROJECT_ID}" \
             --platform managed \
+            --max 1 \
+            --concurrency 4 \
+            --timeout 45s \
             --service-account "${RUNTIME_SERVICE_ACCOUNT}" \
             --no-allow-unauthenticated \
-            --update-env-vars "GCP_PROJECT_ID=${PROJECT_ID},VERTEX_AI_LOCATION=${REGION}"
+            --update-env-vars "GCP_PROJECT_ID=${PROJECT_ID},VERTEX_AI_LOCATION=${REGION},MAX_PROMPT_CHARACTERS=12000,MAX_OUTPUT_TOKENS=512,VERTEX_AI_TIMEOUT_SECONDS=35,GENERATE_RATE_LIMIT_PER_MINUTE=20"

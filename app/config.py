@@ -8,6 +8,11 @@ class Settings(BaseSettings):
     GCP_PROJECT_ID: str | None = None
     VERTEX_AI_LOCATION: str = "us-central1"
     VERTEX_AI_MODEL: str = "gemini-3.5-flash"
+    LOG_LEVEL: str = "INFO"
+    MAX_PROMPT_CHARACTERS: int = 12000
+    MAX_OUTPUT_TOKENS: int = 512
+    VERTEX_AI_TIMEOUT_SECONDS: float = 35.0
+    GENERATE_RATE_LIMIT_PER_MINUTE: int = 20
 
     # MLflow Settings
     ENABLE_MLFLOW: bool = False
